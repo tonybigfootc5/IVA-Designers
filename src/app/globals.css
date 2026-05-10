@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #08111a;
+  --foreground: #f8f4e3;
+  --card: rgba(11, 24, 37, 0.9);
+  --muted: #9aa6b2;
+  --line: rgba(212, 175, 55, 0.18);
+  --gold: #d4af37;
+  --gold-soft: #f5df9b;
+  --slate: #0f1a26;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(212, 175, 55, 0.14), transparent 34%),
+    linear-gradient(180deg, #071019 0%, #08111a 30%, #04090f 100%);
+  color: var(--foreground);
+}
+
+body::selection {
+  background: rgba(212, 175, 55, 0.2);
+}
+
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}

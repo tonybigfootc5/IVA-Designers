@@ -1,0 +1,45 @@
+{
+  "project": "IVA Web Platform",
+  "brand": "IVA — Designer's Cult",
+  "pipeline": ["Graphify", "GitHub", "Vercel"],
+  "integrations": {
+    "github": {
+      "repository": "https://github.com/tonybigfootc5/IVA-Designers.git",
+      "defaultBranch": "main",
+      "status": "connected-locally"
+    },
+    "vercel": {
+      "projectName": "iva-designers",
+      "status": "config-ready-auth-required",
+      "configFile": "vercel.json"
+    },
+    "graphify": {
+      "workspace": "graphify/workspace.json",
+      "status": "connected-in-repo"
+    }
+  },
+  "stack": {
+    "frontend": "Next.js 15 App Router",
+    "language": "TypeScript",
+    "styling": "Tailwind CSS",
+    "database": "PostgreSQL with Prisma",
+    "auth": ["NextAuth Google OAuth", "Firebase OTP"],
+    "video": ["VdoCipher", "Mux"]
+  },
+  "stages": [
+    { "id": "stage-1", "name": "Foundation & Scaffolding", "status": "in_progress" },
+    { "id": "stage-2", "name": "Authentication & Commerce", "status": "in_progress" },
+    { "id": "stage-3", "name": "Student Experience", "status": "planned" },
+    { "id": "stage-4", "name": "Admin & Live Operations", "status": "in_progress" },
+    { "id": "stage-5", "name": "Launch, Scale & Monitoring", "status": "planned" }
+  ],
+  "deployments": {
+    "preview": "Vercel Preview",
+    "production": "Vercel Production"
+  },
+  "links": {
+    "repository": "https://github.com/tonybigfootc5/IVA-Designers.git",
+    "healthEndpoint": "/api/health",
+    "vercelConfig": "vercel.json"
+  }
+}

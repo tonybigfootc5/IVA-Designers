@@ -1,0 +1,7 @@
+* @iva-platform
+
+/src/app/(admin)/ @iva-platform
+/src/app/api/ @iva-platform
+/prisma/ @iva-platform
+/vercel.json @iva-platform
+/graphify/ @iva-platform
