@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #071019;
+  --foreground: #fff8e8;
+  --card: rgba(10, 21, 30, 0.82);
+  --muted: #c7d0d8;
+  --line: rgba(232, 197, 103, 0.24);
+  --gold: #c2a87e;
+  --gold-soft: #f3dfb0;
+  --slate: #101b28;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(243, 223, 176, 0.13), transparent 24%),
+    radial-gradient(circle at 85% 18%, rgba(194, 168, 126, 0.09), transparent 18%),
+    radial-gradient(circle at bottom right, rgba(194, 168, 126, 0.08), transparent 28%),
+    linear-gradient(180deg, #0f172a 0%, #111827 46%, #050816 100%);
+  color: var(--foreground);
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.2);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.08), transparent 14%),
+    radial-gradient(circle at 80% 14%, rgba(255, 255, 255, 0.03), transparent 18%);
+  opacity: 0.8;
+  z-index: -2;
+}
+
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.glass-panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04)),
+    rgba(9, 16, 27, 0.52);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 24px 80px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(26px) saturate(140%);
+  -webkit-backdrop-filter: blur(26px) saturate(140%);
+}
+
+.liquid-glass {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.24), transparent 26%, transparent 60%, rgba(255, 255, 255, 0.12)),
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.16), transparent 42%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.liquid-glass::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: -40%;
+  height: 72%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent 70%);
+  filter: blur(18px);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.melt-frame {
+  -webkit-mask-image: radial-gradient(circle at center, black 52%, transparent 100%);
+  mask-image: radial-gradient(circle at center, black 52%, transparent 100%);
+}
+
+.melt-vignette {
+  background:
+    radial-gradient(circle at center, transparent 38%, rgba(7, 16, 25, 0.2) 64%, rgba(7, 16, 25, 0.92) 100%),
+    linear-gradient(180deg, transparent 42%, rgba(7, 16, 25, 0.78) 86%, #071019 100%);
+}
+
+.gold-progress {
+  background: linear-gradient(90deg, rgba(194, 168, 126, 0.98), rgba(243, 223, 176, 0.58));
+  box-shadow: 0 0 22px rgba(194, 168, 126, 0.28);
+}
+
+@keyframes designer-s-blink {
+  0%,
+  100% {
+    opacity: 0.72;
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 22px rgba(255, 255, 255, 0.28);
+  }
+}
+
+.animate-designer-s-blink {
+  animation: designer-s-blink 2.8s ease-in-out infinite;
+}

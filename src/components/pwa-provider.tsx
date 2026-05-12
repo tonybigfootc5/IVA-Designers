@@ -1,0 +1,25 @@
+"use client";
+
+import { useEffect } from "react";
+
+export function PwaProvider() {
+  useEffect(() => {
+    if (process.env.NODE_ENV !== "production") {
+      navigator.serviceWorker
+        ?.getRegistrations?.()
+        .then((registrations) => Promise.all(registrations.map((registration) => registration.unregister())))
+        .then(() => {
+          if (!("caches" in window)) return;
+          return window.caches.keys().then((keys) => Promise.all(keys.map((key) => window.caches.delete(key))));
+        })
+        .catch(() => undefined);
+      return;
+    }
+
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js").catch(() => undefined);
+    }
+  }, []);
+
+  return null;
+}
